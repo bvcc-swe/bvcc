@@ -1,14 +1,5 @@
 from math import log2, ceil
 
-class Node:
-    def __init__(self, value, left=None, right=None) -> None:
-        self.value = value
-        self.left = left
-        self.right = right
-    
-    def __str__(self):
-        return self.value
-
 values = ('1', '2', '3', '4', '5', '6', '7')
 
 def create_tree_as_list(values, start, end, targetIndex = 0, target = []):
@@ -48,5 +39,5 @@ def print_tree(l) -> None:
 
 list_tree = create_tree_as_list(values, 0, len(values) - 1)
 print(f'binary tree represented as array: {list_tree}')
-print(f'format binary tree array:')
+print('format binary tree array:')
 print_tree(list_tree)

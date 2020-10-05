@@ -16,7 +16,7 @@ def print_paths(adjacency_list, start, end, path = []):
     Prints all paths from start to end.
     """
     if path and path[-1] == end:
-        print('->'.join(path))
+        print(' -> '.join(path))
         return
     
     if not path: 
@@ -26,5 +26,6 @@ def print_paths(adjacency_list, start, end, path = []):
         for neighbor in adjacency_list[path[-1]]:
             print_paths(adjacency_list, start, end, [*path, neighbor])
 
-# print all the paths from a to e    
+# print all the paths from a to e 
+print('print all paths between nodes \'a\' and \'e\'')  
 print_paths(adjacency_list, a, e)

@@ -1,6 +1,5 @@
 values = ('a', 'b', 'c', 'd', 'e')
 
-# create GraphNode class
 class GraphNode:
     def __init__(self, value, *neighbors):
         self.value = value
@@ -31,6 +30,7 @@ def print_path(start, end, path = []):
             print_path(start, end, [*path, n])
 
 # print all paths from a to e
+print('print all paths between nodes \'a\' and \'e\'')  
 print_path(a, e)
 
 

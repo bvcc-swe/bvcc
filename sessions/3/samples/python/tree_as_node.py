@@ -1,7 +1,4 @@
-from functools import reduce
-from math import log2, ceil
-
-class Node:
+class TreeNode:
     def __init__(self, value, left=None, right=None) -> None:
         self.value = value
         self.left = left
@@ -12,14 +9,14 @@ class Node:
 
 values = ('1', '2', '3', '4', '5', '6', '7')
 
-def create_tree(values, start, end) -> Node:
+def create_tree(values, start, end) -> TreeNode:
     """
     Creates a node representation of a binary tree based on a sorted collection.
     """
     if not values or start > end: 
         return 
     mid = int((start + end)/2)
-    root = Node(values[mid])
+    root = TreeNode(values[mid])
     root.left = create_tree(values, start, mid - 1)
     root.right = create_tree(values, mid + 1, end)
     return root
