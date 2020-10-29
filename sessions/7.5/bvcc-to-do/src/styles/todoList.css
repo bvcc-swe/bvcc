@@ -1,0 +1,160 @@
+html,
+body {
+    width: 100%;
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+nav {
+    display: flex;
+    flex-flow: row;
+    background-color: rgb(0, 0, 0);
+}
+nav a, nav a:visited{
+    text-decoration:none;
+    color: rgb(255, 255, 255);
+}
+nav > button,
+nav>button:focus {
+    padding: 1em;
+    background: none;
+    border: none;
+    color: white;
+    outline: none;
+}
+
+nav>button:hover {
+    background-color: #444444;
+    cursor: pointer;
+}
+
+nav>button.selected {
+    background-color: #777777;
+    font-weight: bold;
+}
+.nav-list{
+    display: flex;
+    flex-flow: row;
+    list-style: none;
+    padding: 0;
+    
+}
+.nav-list>li{
+    margin-right: 1em;
+}
+.list {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    flex-flow: column;
+    background-color: rgba(0, 0, 0, 0.1)
+}
+
+ul.list {
+    list-style: none;
+    padding: 0;
+}
+
+.list-item {
+    margin: 0.5em;
+    padding: 0.5em;
+    background-color: rgb(0, 0, 0, 0.1);
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+.list-item>.content {
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+.list-item>.status {
+    flex: 0 0 5%;
+    display: flex;
+    align-items: center;
+}
+
+.list-item>.content {
+    flex: 1 1 auto;
+}
+
+.list-item>.content>.title {
+    font-weight: bold;
+    font-size: 1em;
+}
+
+.list-item>.content>.subtitle {
+    font-size: 0.85em;
+}
+
+.list-item>.controls {
+    display: flex;
+    align-items: center;
+    margin-left: 1em;
+}
+
+.user {
+    color: blue;
+}
+
+.user::before {
+    content: "@";
+}
+
+.time::after {
+    content: " min";
+}
+
+.distance::after {
+    content: " mi";
+}
+
+.money::before {
+    content: "$";
+}
+
+.money.ask {
+    font-weight: bold;
+    color: green;
+}
+
+[contenteditable] {
+    padding: 0.5em;
+}
+
+[placeholder]:empty::before {
+    content: attr(placeholder);
+}
+
+.property-list {
+    display: flex;
+}
+
+ul.property-list { 
+    list-style: none;
+    padding: 0;
+}
+
+.property-list>li {
+    margin-right: 1em;
+}
+
+.property-list>li>span:nth-child(1)::after {
+    content: ": ";
+}
+
+.property-list>li>span:nth-child(1) {
+    font-weight: bold;
+}
+
+.property-list>li>span:nth-child(2) {
+    font-weight: bold;
+    color: blue;
+}
+
+.tab {
+    display: none;
+}
+
+.tab.active {
+    display: block;
+}

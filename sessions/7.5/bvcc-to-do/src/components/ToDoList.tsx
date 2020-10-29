@@ -1,11 +1,13 @@
 import items from '../data/items.json' 
-import TodoListItem from 'ToDoListItem'
+import React, {FunctionComponent} from 'react'
+import {ToDoListItem} from './ToDoListItem'
 
-export let ToDoListItem = () => {
-    let c = items.map(x => <TodoListItem {x}/>);
+export let ToDoList: FunctionComponent = () => {
+    let c = items.map(x => <ToDoListItem item={x}/>);
     return (
-        <ul>
+        <ul className= "list">
             {c}
         </ul>
+
     )
 }

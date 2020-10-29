@@ -1,22 +1,29 @@
 [
     {
-        "user": "John",
+        "id": 1,
+        "user": "john",
         "title": "Complete Taxes",
         "isComplete": false,
         "request": {
+            "distance": 5,
+            "duration": 30,
             "ask": 20.00
         }
     },
     {
-        "user": "John",
+        "id": 2,
+        "user": "john",
         "title": "Take out trash.",
         "isComplete": false,
         "request": {
+            "distance": 20,
+            "duration": 60,
             "ask": 40.0
         }
     },
     {
-        "user": "John",
+        "id": 3,
+        "user": "john",
         "title": "Complete Taxes",
         "isComplete": false,
         "request": null

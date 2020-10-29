@@ -1,39 +1,53 @@
 import React from 'react';
+import {BrowserRouter as Router, Route, Switch, Link} from 'react-router-dom';
 import logo from './logo.svg';
+import {ToDoList} from './components/ToDoList';
+import {RequestList} from './components/RequestList';
 import './App.css';
+import "./styles/todoList.css";
 
 function App() {
   return (
-    <div>
+    <Router>
+      <div>
+      <div>The Most</div>
+        <nav>
+          <ul className="nav-list">
+            <li>
+              <Link to="/getOrganized">Get Organized</Link>
+            </li>
+            <li>
+              <Link to="/getPaid">Get Paid</Link>
+            </li>
+          </ul>
+        </nav>
+
+        <Switch>
+          <Route path="/getOrganized">
+            <ToDoList />
+          </Route>
+          <Route path="/getPaid">
+            <RequestList />
+          </Route>
+        </Switch>
+      </div>
+
+    {/* <div>
       <div>The Most</div>
       <nav>
         <button>Get Organized</button>
         <button>Get Paid</button>
       </nav>
-      <div class="tab">
-        <TodoList/>
+      <div className="tab">
+        <ToDoList/>
       </div>
-      <div class="tab">
+      <div className="tab">
 
       </div>
-    </div>
-    // <div className="App">
-    //   <header className="App-header">
-    //     <img src={logo} className="App-logo" alt="logo" />
-    //     <p>
-    //       Edit <code>src/App.tsx</code> and save to reload.
-    //     </p>
-    //     <a
-    //       className="App-link"
-    //       href="https://reactjs.org"
-    //       target="_blank"
-    //       rel="noopener noreferrer"
-    //     >
-    //       Learn React
-    //     </a>
-    //   </header>
-    // </div>
+    </div> */}
+    </Router>
   );
+ 
 }
 
 export default App;
