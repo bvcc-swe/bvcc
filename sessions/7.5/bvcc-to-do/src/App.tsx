@@ -5,6 +5,9 @@ import {ToDoList} from './components/ToDoList';
 import {RequestList} from './components/RequestList';
 import './App.css';
 import "./styles/todoList.css";
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { faCheckCircle, faCircle, faHandsHelping } from '@fortawesome/free-solid-svg-icons'
+library.add(faCheckCircle, faCircle, faHandsHelping);
 
 function App() {
   return (
@@ -23,6 +26,9 @@ function App() {
         </nav>
 
         <Switch>
+          <Route exact path="/">
+          <ToDoList />
+          </Route>
           <Route path="/getOrganized">
             <ToDoList />
           </Route>

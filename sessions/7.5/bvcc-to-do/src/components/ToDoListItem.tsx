@@ -1,5 +1,6 @@
 import {IToDoListItem} from '../models/IToDoListItem';
-import React, {FunctionComponent} from 'react';
+import React, {FunctionComponent, useState} from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 
 type Props = {
@@ -8,10 +9,11 @@ type Props = {
 
 export const ToDoListItem:FunctionComponent<Props> = ({item}) => {
   const {title, isComplete, request} = item;
+  const[isComplet, setComplete] = useState(isComplete);
     return (
       <li className="list-item">
         <div className="status">
-            {isComplete ? <i className="fas fa-check-circle"></i> : <i className="far fa-circle"></i> }
+            <FontAwesomeIcon icon={isComplet? "check-circle" : "circle"} onClick={()=> setComplete(!isComplet)}/>
         </div>
         <div className="content">
             <div className="title">{title}</div>
@@ -20,7 +22,7 @@ export const ToDoListItem:FunctionComponent<Props> = ({item}) => {
             </div>
         </div>
         <div className="controls">
-            <i className="fas fa-hands-helping"></i>
+        <FontAwesomeIcon icon="hands-helping"/>
         </div>
     </li>
     )
