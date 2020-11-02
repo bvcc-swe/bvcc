@@ -1,24 +1,12 @@
-import React, { FunctionComponent } from 'react';
-import items from '../data/items.json'
-import { IToDoListItem } from '../models/IToDoListItem';
+import React, { FunctionComponent } from "react";
+import { RequestedToDoListItem } from '../models/RequestedToDoListItem';
 
-type RequestedToDoListItem = IToDoListItem & {request: Request};
-
-export const RequestList: FunctionComponent = () => {
-    const requestListItems = items.filter(x => x.request).map(x => <RequestListItem item={x as RequestedToDoListItem} />);
-    return (
-        <ul>
-            {requestListItems}
-        </ul>
-    )
-}
-
-type Prop = {
+type Props = {
     item: RequestedToDoListItem;
 }
 
-const RequestListItem: FunctionComponent<Prop> = ({ item }) => {
-    const {user, title, request} = item;
+export const RequestListItemComponent: FunctionComponent<Props> = ({ item }) => {
+    const { user, title, request } = item;
 
     return (
         <li className="list-item">
