@@ -1,19 +1,20 @@
-import React from 'react';
-import {BrowserRouter as Router, Route, Switch, Link} from 'react-router-dom';
-import logo from './logo.svg';
-import {ToDoList} from './components/ToDoList';
-import {RequestList} from './components/RequestList';
-import './App.css';
-import "./styles/todoList.css";
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { faCheckCircle, faCircle, faHandsHelping } from '@fortawesome/free-solid-svg-icons'
-library.add(faCheckCircle, faCircle, faHandsHelping);
+import { faCircle } from '@fortawesome/free-regular-svg-icons';
+import { faCheckCircle, faHandsHelping, faPlusCircle } from '@fortawesome/free-solid-svg-icons';
+import React from 'react';
+import { BrowserRouter as Router, Link, Route, Switch } from 'react-router-dom';
+import './App.css';
+import { RequestListComponent } from './components/RequestListComponent';
+import { ToDoListComponent } from './components/ToDoListComponent';
+import "./styles/todoList.css";
+
+library.add(faCheckCircle, faCircle, faHandsHelping, faPlusCircle);
 
 function App() {
   return (
     <Router>
       <div>
-      <div>The Most</div>
+        <h1>The Most</h1>
         <nav>
           <ul className="nav-list">
             <li>
@@ -27,33 +28,19 @@ function App() {
 
         <Switch>
           <Route exact path="/">
-          <ToDoList />
+            <ToDoListComponent />
           </Route>
           <Route path="/getOrganized">
-            <ToDoList />
+            <ToDoListComponent />
           </Route>
           <Route path="/getPaid">
-            <RequestList />
+            <RequestListComponent />
           </Route>
         </Switch>
       </div>
-
-    {/* <div>
-      <div>The Most</div>
-      <nav>
-        <button>Get Organized</button>
-        <button>Get Paid</button>
-      </nav>
-      <div className="tab">
-        <ToDoList/>
-      </div>
-      <div className="tab">
-
-      </div>
-    </div> */}
     </Router>
   );
- 
+
 }
 
 export default App;
