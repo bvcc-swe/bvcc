@@ -2,6 +2,7 @@
 ## How to fork the project
 1. Go to the respository https://github.com/whitestock/bvcc
 2. Fork the project
+3. Put the forked project in a new folder on your computer
 
 ** The fork button is at the top right of the page right next to the "stars" button
 ## Download Dependencies
