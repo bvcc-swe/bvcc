@@ -1,14 +1,24 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import React, { FunctionComponent } from 'react';
-import { ToDoListItem } from '../models/ToDoListItem';
 
-type Props = {
-  item: ToDoListItem;
-  updateItem: (item: ToDoListItem) => void
-  createRequest: (item: ToDoListItem) => void
-}
+/** @typedef {import("../types/types").ToDoListItem} ToDoListItem */
 
-export const ToDoListItemComponent: FunctionComponent<Props> = ({ item, updateItem, createRequest }) => {
+ /**
+  * @callback UpdateItemCallback
+  * @param {ToDoListItem} item - The updated item.
+  * @return {void}
+  */
+
+/**
+ * @typedef {Object} Props
+ * @property {ToDoListItem} item - An item.
+ * @property {UpdateItemCallback} updateItem - A callback that updates the item.
+ */
+
+/**
+ * Creates a component that represents a to-do list item.
+ * @param {Props} props - The properties 
+ */
+export const ToDoListItemComponent = ({ item, updateItem}) => {
   const { title, isComplete, request } = item;
 
   const toggleComplete = () => {
@@ -16,8 +26,8 @@ export const ToDoListItemComponent: FunctionComponent<Props> = ({ item, updateIt
     updateItem(item);
   }
 
-  const handleRequestOnClick = (event: React.MouseEvent) => {
-    createRequest(item);
+  const handleRequestOnClick = event => {
+    alert("Update this click event so that users can create a request via a form.");
   }
 
   return (

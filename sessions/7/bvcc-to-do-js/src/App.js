@@ -1,12 +1,10 @@
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faCircle } from '@fortawesome/free-regular-svg-icons';
 import { faCheckCircle, faHandsHelping, faPlusCircle } from '@fortawesome/free-solid-svg-icons';
-import React from 'react';
 import { BrowserRouter as Router, Link, Route, Switch } from 'react-router-dom';
 import './App.css';
 import { RequestListComponent } from './components/RequestListComponent';
 import { ToDoListComponent } from './components/ToDoListComponent';
-import "./styles/todoList.css";
 
 library.add(faCheckCircle, faCircle, faHandsHelping, faPlusCircle);
 
@@ -40,7 +38,6 @@ function App() {
       </div>
     </Router>
   );
-
 }
 
 export default App;
