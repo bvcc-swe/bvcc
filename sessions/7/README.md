@@ -35,7 +35,7 @@ Install the latest version of [Visual Studio Code](https://code.visualstudio.com
 1. Sign up for a GitHub account at https://github.com.
 
 ### Fork the Repository
-1. Go to the repository https://github.com/whitestock/bvcc
+1. Go to the repository https://github.com/bvcc-swe/bvcc
 1. Click the **Fork** button.
 1. When prompted to select a fork location, select your personal GitHub account.
 
@@ -44,7 +44,7 @@ Install the latest version of [Visual Studio Code](https://code.visualstudio.com
 1. From the pop-up menu, select the HTTPS tab in the Clone section.
 1. Copy the repository URL.
 1. Run `git clone <RepositoryUrl> <LocalDirectory>` from the command line.
-> **Example:** git clone https://github.com/jack/myrepo.git C:\users\jack\source\repos
+> **Example:** git clone https://github.com/bvcc-swe/bvcc.git C:\users\jack\source\repos
 
 ## Getting Started With Development
 For this exercise, two versions of the To-Do list React application were created. One version was written using React and JavaScript (bvcc-to-do-js), while the other was written using React and TypeScript (bvcc-to-do-ts). For those who are new to web development, we recommend that you attempt the assignment using the project that uses React and JavaScript. For those with more web development experience, we recommend that you attempt the assignment using the project that uses React and TypeScript.
