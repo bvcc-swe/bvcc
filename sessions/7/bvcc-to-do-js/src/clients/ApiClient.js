@@ -1,5 +1,4 @@
 import data from '../data/items.json'
-import cloneDeep from 'lodash/cloneDeep';
 
 /**
  * @typedef {Object} ToDoListItem
@@ -10,8 +9,8 @@ import cloneDeep from 'lodash/cloneDeep';
 export class ApiClient {
     /**@type {Map<number, ToDoListItem>} */
     static itemsById;
-
     constructor() {
+        this.host = "https//localhost:3002"
         if (!ApiClient.itemsById) {
             ApiClient.itemsById = data.reduce((map, item) => map.set(item.id, item), new Map());
         }
@@ -23,10 +22,20 @@ export class ApiClient {
      * @returns {Promise<ToDoListItem>} A promise containing the created item.
      */
     async create(item) {
-        const id = Math.max(...ApiClient.itemsById.keys()) + 1;
-        const result = { ...item, id };
-        ApiClient.itemsById.set(result.id, result);
-        return result;
+        const content = JSON.stringify(item);
+        const response = await fetch(`${this.host}/api/todo`, {
+            method: "POST", 
+            body: content,
+            headers: {
+                "Content-Type": "application/json"
+            }
+        });
+        
+        if (response !== 200) {
+            Promise.reject(new Error("The item could not be created."));
+        }
+
+        return item.json();
     }
 
     /**
@@ -35,9 +44,12 @@ export class ApiClient {
      * @returns {Promise<ToDoListItem | null>} A promise contain the item with the corresponding ID. 
      */
     async get(id) {
-        let result = ApiClient.itemsById.get(id);
-        result = result ? cloneDeep(result) : null;
-        return result;
+        const response = await fetch(`${this.host}/api/todo/${id}`);
+        if (response.status !== 200) {
+            return null;
+        }
+        const item = response.json();
+        return item;
     }
 
     /**
@@ -45,8 +57,10 @@ export class ApiClient {
      * @returns {Promise<ToDoListItem[]>} A promise containing a collection of all items.
      */
     async getAll() {
-        return Array.from(ApiClient.itemsById.values(), x => cloneDeep(x));
-    }
+        const response = await fetch(`${this.host}/api/todo`);
+        const items = await response.json();
+        return items;
+    } 
 
     /**
      * Updates an item.
@@ -54,14 +68,19 @@ export class ApiClient {
      * @returns {Promise<ToDoListItem>} A promise containing the updated item.
      */
     async update(item) {
-        let result = ApiClient.itemsById.get(item.id);
-        if (!result) {
-            return Promise.reject(new Error(`An item with id, ${item.id}, was not found.`))
+        const response = await fetch(`${this.host}/api/todo/${item.id}`, { 
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(item)
+        });
+
+        if (response.status !== 200) {
+            Promise.reject(new Error("The item could not be updated."));
         }
-        // merge the existing item and the updated item
-        result = { ...result, ...item }
-        ApiClient.itemsById.set(result.id, result);
-        return cloneDeep(result);
+
+        return item.json();
     }
 
     /**
@@ -70,6 +89,9 @@ export class ApiClient {
      * @returns {Promise} An empty promise.
      */
     async delete(id) {
-        ApiClient.itemsById.delete(id);
+        const response = await fetch(`${this.host}/api/todo/${id}`, { method: "DELETE" });
+        if (response.status !== 200) {
+            Promise.reject(new Error("The item could not be deleted."));
+        }
     }
 }
