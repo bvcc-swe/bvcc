@@ -6,7 +6,7 @@
 - Install [Visual Studio Code](https://code.visualstudio.com/download)
 - Install [Postman](https://www.postman.com/downloads/)
 
-##To-do
+## To-do
 1. You must complete the code for the API action functions, getAll, Put, & Delete in the .js file
 1. Get All should return all the todos that are stored in our collection
 1. Put should create a new todo based on a given id
