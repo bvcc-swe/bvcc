@@ -1,8 +1,8 @@
 # Getting Started
 ## Prerequisites
 - Install [NodeJS](https://nodejs.org/en/download/)
-- Run Npm
-- Install [ExpressJS]()
+- Run $ `$ npm install` in the terminal to install all dependencies
+- [ExpressJS]
 - Install [Visual Studio Code](https://code.visualstudio.com/download)
 - Install [Postman](https://www.postman.com/downloads/)
 
