@@ -1,8 +1,6 @@
 # Getting Started
 ## Prerequisites
 - Install [NodeJS](https://nodejs.org/en/download/)
-- Run `$ npm install` in the terminal to install all dependencies
-- [ExpressJS] (https://expressjs.com/en/4x/api.html), Body Parser, Cors
 - Install [Visual Studio Code](https://code.visualstudio.com/download)
 - Install [Postman](https://www.postman.com/downloads/)
 
@@ -78,21 +76,27 @@ The table below lists sample requests that are supported by the Web API. Verify 
 
 ## How To: Test the Web API with the Web Client
 **Note:** The client and the API must run simultaneously 
-
+### Start the Web Client and Web API
 To complete this, open two VS Code windows.
 
 In one window run the client by going to the sessions/8/bvcc-to-do-js 
 1. `cd src` 
-1. run ` $ npm install` to install all dependencies
-1. run `$ npm start` to start the client
+1. Run ` $ npm install` to install all dependencies.
+1. Run `$ npm start` to start the Web Client.  
+**Note:** This command will start the Web Client, and host it on http://localhost:3000. For convenience, a web browser will open automatically and request the Web Client from the host.
 
 In the other window go to sessions/8/assignment/bvcc-to-do-api
-1. run `$ npm install` to install all dependencies
-1. run `$ node index.js` and it should say "Hello world app listening on port 3002!" when it is successful
+1. Run `$ npm install` to install all dependencies.
+1. Run `$ node index.js` to start the Web API.  
+**Note:** This command will start the Web API, and host it on http://localhost:3002.
 
-After the Web Client and Web API are running, go to the console where the React app is running
-1. Add a todo with any title 
-1. Then refresh the page, you should see that todo does not delete
-1. Delete one of the existing todos and refresh the page, you should get the same result
+### Verify Web Client/Web API Integration
+In the previous assignment you may have noticed that modifications to the collection of to-do list items did not persist between page refreshes of the Web Client. This behavior occurred because the collection of items only existed in the memory allocated for the Web Client. This memory was cleared whenever the Web Client was refreshed.
+
+Now that Web Client has been configured to read and write to-do list items from the Web API, modifications to the collection of to-do list items will persist as long the Web API is running. To confirm this behavior, go to the web browser where the Web Client is running and perform the following tasks:
+1. Create a to-do list item. 
+1. After refreshing the web page, verify that the to-list item that you created is still displayed in the list.
+1. Delete one of the existing to-do list items
+1. After refreshing the page, verify that the to-do list item is no longer displayed in the list.
 
 Now do a Ctrl^C in the terminal that's running the api (index.js) and run it again. Go back to the console and refresh the page. You should see that todo from what we originally started are there and not the ones we created. 
