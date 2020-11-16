@@ -6,17 +6,34 @@
 - Install [Visual Studio Code](https://code.visualstudio.com/download)
 - Install [Postman](https://www.postman.com/downloads/)
 
-## To-do
-1. You must complete the code for the API action functions, getAll, Put, & Delete in the .js file
-1. Get All should return all the todos that are stored in our collection
-1. Put should create a new todo based on a given id
-1. Delete should delete a todo based on a gived id
+## Assignment
+This assignment focuses on acreating and utilizing APIs. We have already created the client for you. Which is a file that handles each call to the API everytime it the user does an action that calls for it. For example when a user presses the add button to add a todo to the list. The client will handle it and make the needed POST request to the API. 
+
+Your task is to finish creating the API for the client to talk to. We have already completed getAll and put for you. You must complete the following in the todo.js file
+1. Complete the code for the API action functions, getAll, Post, & Delete in the todo.js file
+1. The GetAll function should return all the todos that are stored in our collection
+1. The Post function should create a new todo based on a given id
+1. The Delete function should delete a todo based on a gived id
+
+## How to run React App
+In order to have to test your api you must run the react app which holds the code to our client and api.
+1. Run your React App by changing to the src folder and running the command `$ npm start`
 
 ## Running the API
+API is hosted on your local server, you must run it seperately in order to interact with it
 1. Open the folder, `bvcc\sessions\8\samples\javascript\todo-api\`, in Visual Studio Code.
 1. Open a terminal (View &#8594; Terminal), and run `npm install` from the project root directory to install the project dependencies.
 1. From the main menu, select Run &#8594; Start Debugging.  
 **Note:** This command will host the API at http://localhost:3002.
+
+## How to Test the API with Postman 
+In order to test the API and make sure it running correctly you test it with postman with fake requests. Do the following
+1. Open the Postman Application and sign in
+1. Press the New+ Orange Button at the top left
+1. Select what type of request to make (GET,PUT,POST,DELETE)
+1. Put in the resource identifier for example for a get request we would use "http://localhost:3002/api/todo"
+1. Press Send
+**Note:** A Request on Postman will only work if you have both the react app and api running
 
 ## Sending Requests to the API
 The REST API supports the requests listed in the table below. These requests can be sent sent to the API by: 
@@ -35,14 +52,3 @@ The REST API supports the requests listed in the table below. These requests can
 | Change the title of the to-do list item where the ID is `2`.|http://localhost:3002/api/todos/2 | PUT | Content-Type: application/json | "{"title":"Confirm mail-in ballot was received."}" |
 | Delete the to-do list item where the ID is `2`.|http://localhost:3002/api/todos/2 | DELETE | Content-Type: application/json | N/A |
 
-## How to run React App
-1. Run your React App by changing to the src folder and running the command `$ npm start`
-
-## How to Use Postman to Test API
-1. Open the Postman Application and sign in
-1. Press the New+ Orange Button at the top left
-1. Select what type of request to make (GET,PUT,POST,DELETE)
-1. Put in the resource identifier for example for a get request we would use "http://localhost:3002/api/todo"
-1. Press Send
-
-**Note:** A Request on Postman will only work if you have both the react app and api running
