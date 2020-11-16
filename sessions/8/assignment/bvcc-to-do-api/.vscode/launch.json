@@ -6,13 +6,12 @@
     "configurations": [
         {
             "type": "node",
-            // "runtimeExecutable": "${workspaceFolder}\\node_modules\\nodemon\\bin\\nodemon.js",
             "request": "launch",
             "name": "Launch Program",
             "skipFiles": [
                 "<node_internals>/**"
             ],
-            "program": "${workspaceFolder}\\src\\index.js"
+            "program": "${workspaceFolder}/src/index.js"
         }
     ]
 }

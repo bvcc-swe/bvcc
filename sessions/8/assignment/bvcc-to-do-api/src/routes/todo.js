@@ -24,43 +24,24 @@ router.get('/', (req, res) => {
     res.json(result);
 });
 
-router.get('/:id', (req, res) => {
-    const id = parseInt(req.params.id);
-    const result = items.find(x => x.id === id);
-    if (!result) {
-        res.status(404).send("The item was not found.");
-    }
-    res.json(result);
-});
+// Get the To-Do List Item with the Specified ID:
+// - Create a route that supports the GET method for the URL, /api/todos/{id}.
+// - If an item with the specified ID exists within the items collection, send the item to the client as JSON.
+// - If the item does not exist in the collection, send the client an HTTP Status Code a 404.
 
-router.post('/', (req, res) => {
-    const id = Math.max(...items.map(x => x.id)) + 1;
-    const createdDate = new Date().toISOString();
-    const item = { title: "", isComplete: false, request: null, ...req.body, id, createdDate };
-    items.push(item);
-    res.json(item);
-});
+// Create a To-Do List Item:
+// - Create a route that supports POST method for the URL, /api/todos.
+// - The new item should be read from the body of the request and converted to a JSON object.
+//   The new item will automatically be converted to JSOn if the request specifies the Content-Type
+//   header as application/json, and the request body content is a valid string representation of a 
+//   JSON object. 
+// - The new item should be assigned an id whose value is 1 greater the largest id for an item in the
+//   existing collection.
+// - Return the item containing the new id to client.
 
-router.put('/:id', (req, res) => {
-    const id = parseInt(req.params.id);
-    const item = req.body;
-    const index = items.findIndex(x => x.id === id);
-    if (index < 0) {
-        res.status(404).send("The item was not found.");
-    }
-    const result = { ...items[index], ...item, id };
-    items[index] = result;
-    res.json(result);
-});
-
-router.delete('/:id', (req, res) => {
-    const id = parseInt(req.params.id);
-    const index = items.findIndex(x => x.id === id);
-    if (index < 0) {
-        res.sendStatus(200);
-    }
-    items.splice(index, 1);
-    res.sendStatus(200);
-});
+// Delete the To-Do List Item with the Specified ID:
+// - Create a route that supports DELETE method for the URL, /api/todos/{id}.
+// - If an item with the specified ID exists within the collection, remove it.
+// - Return a HTTP status code, 200.
 
 module.exports = router;
