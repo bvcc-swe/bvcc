@@ -14,7 +14,7 @@ export const RequestListComponent = () => {
             const results = await client.getAll();
             setItems(results.filter(x => x.request));
         })();
-    });
+    }, []);
     const requestListItems = items.filter(x => x.request).map(x => <RequestListItemComponent item={x} />);
     return (
         <ul>

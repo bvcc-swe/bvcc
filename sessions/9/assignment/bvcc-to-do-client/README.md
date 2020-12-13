@@ -14,19 +14,19 @@ The client needs to be hosted through firebase so that it can be accessed throug
 Each firebase project uses an “app” within the project to utilize the services
 Click the plus sign on the homescreen that says “add app +”
 
-![Add App ](../images/add_app.png)
+![Add App ](./images/add_app.png)
 
  
 Once you select that it will ask you what type of app you want and we are building a web application. 
  
-![Web App ](../images/web_app.png)
+![Web App ](./images/web_app.png)
  
 
 ## Add firebase to your app
 
 Once you select a web application the “Add firebase App” screen should pop up.
 
-![register App ](../images/register.png)
+![register App ](./images/register.png)
  
 1. The first step is picking a name to register your app under. Your name should be {firstname-lastname} all lowercase. For example mine would be tabia-cannon 
 	
@@ -36,14 +36,14 @@ Once you select a web application the “Add firebase App” screen should pop u
     Then click register app
 
 
-    ![Add App ](../images/register-app-name.png)
+    ![Add App ](./images/register-app-name.png)
 
 1. The firebase SDK has already been added so just click next
 1. Install Firebase CLI
     - Run the command `npm install -g firebase-tools` in the same directory as bvcc-todo-js
 1. Deploying Firebase Hosting - follow the steps given except for when you change the hosting section in the firebase.json follow their steps and change public to “./build” or whatever the path is to access the build folder we created for our client
 
-	![Add App ](../images/hosting.png)
+	![Add App ](./images/hosting.png)
  
 
 ## Verify that your app is hosted to the internet
