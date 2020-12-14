@@ -1,4 +1,5 @@
-# Getting Started Guide
+# Part1: Getting Started With API Deployment
+In order to allow the API to be accessed by clients over the internet, it must be deployed to a hosting service. A hosting service stores your application files, and makes them accessible on the internet via a URL. To host your API, you will deploy it Firebase's Functions service. The steps below will guide you through building and deploying your API.
 
 ## Prerequisites
 1. Install [NodeJS](https://nodejs.org/en/download/)
