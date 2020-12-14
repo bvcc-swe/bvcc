@@ -64,9 +64,9 @@ Once that is complete the client is ready for hosting!
 1. Refresh the page, and verify that the to-do list items are displayed.
 1. Go to the [Cloud Firestore](https://console.firebase.google.com/project/bvcc-swe/firestore) tab on firebase.
 
-Go to the collection that has your name on it and verify that the 2 todos that we created have been added to the database.
+Go to the collection that has your name, and verify that the two to-do list items that you created have been added to the database.
 
-1. Delete one of those todos we created on the browser 
+1. Delete one of the to-do list items that you created using hte client. 
 1. Verify that is has been deleted from the database
  
  
