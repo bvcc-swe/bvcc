@@ -1,5 +1,7 @@
 # Part 2: Getting Started With Deployment
-In order to make the client application available on the internet, it must be deployed to a hosting service. A hosting service stores your application files, and makes them accessible on the internet via a  URL. To host your client application, you will deploy it Firebase's Hosting service. The steps below will guide you through building and deploying your client.
+Firebase - 9.3.0 version
+
+In order to make the client application available on the internet, it must be deployed to a hosting service. A hosting service stores your application files, and makes them accessible on the internet via a  URL. To host your client application, you will deploy it through Firebase's Hosting service. The steps below will guide you through building and deploying your client.
 
 ## Create a Firebase Site
 Before you deploy your application to Firebase, you must create a site using the Firebase Hosting service. The site defines a storage location, and your application's URL. The steps below will guide you through creating a site.
@@ -9,8 +11,9 @@ Before you deploy your application to Firebase, you must create a site using the
 1. Navigate to the hosting section on the left side.
 1. You should see this at top of the page ![Hosting](./images/hostingheader.png)
 1. Press 'Add another site'.
-1. Name your site in the format `bvcc-to-do-{firstname}{lastname}.web.app` ![Hosting](./images/addsite.png).
+1. Name your site in the format `bvcc-to-do-{firstname}{lastname}.web.app` ![Hosting](./images/addHostingSite.png).
 1. Verify that you see your new hosting site in the list.
+
 
 #
 ## Update the Application Configuration
@@ -35,16 +38,48 @@ Before you deploy your application to Firebase, you must create a site using the
     1. What do you want to use as your public directory? `build` 
     1. Create a single-page app (rewrite all urls to /index.html)? `Y`
     1. Set up automatic builds and deploys with Github? `N`
+3. Open the firebase.json file `./sessions/9/assignment/bvcc-to-do-client/firebase.json`
+    
+    1. Add your custom hosting site to the hosting section
+    `"site": "bvcc-to-do-{firstname}{lastname}`
+
+    ```
+    {
+        "hosting": {
+            "public": "build",
+            "site": "bvcc-to-do-tabiacannon",
+            "ignore": [
+            "firebase.json",
+            "**/.*",
+            "**/node_modules/**"
+            ],
+            "rewrites": [{
+                "source": "**",
+                "destination": "/index.html"
+            }]
+        }
+    }
+
+    ```
+
+
+
 
 ## Build the Client (React App)
 In order to deploy your client to Firebase, we must create a production build. 
 
+1. Go to `bvcc/sessions/9/assignment/bvcc-to-do-client`
+1. Install Dependencies 
+    ```
+    $ npm install
+    ```
 1. Build the client application.
     ```
     $ npm run build
     ``` 
 
 ## Deploy the Client
+
 1. Deploy the client to Firebase.
     ```
     $ firebase deploy --only hosting
