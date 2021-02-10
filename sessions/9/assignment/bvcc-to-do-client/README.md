@@ -38,7 +38,7 @@ Before you deploy your application to Firebase, you must create a site using the
     1. What do you want to use as your public directory? `build` 
     1. Create a single-page app (rewrite all urls to /index.html)? `Y`
     1. Set up automatic builds and deploys with Github? `N`
-3. Specify the site name by adding a site property to the hosting object in the `./sessions/9/assignment/bvcc-to-do-client/firebase.json`
+3. Specify the site name by assigning the value, bvcc-to-do-{firstname}{lastname} to the site property of the hosting object in the `./sessions/9/assignment/bvcc-to-do-client/firebase.json.`
     
     1. Add your custom hosting site to the hosting section
     `"site": "bvcc-to-do-{firstname}{lastname}`
@@ -53,7 +53,7 @@ Before you deploy your application to Firebase, you must create a site using the
     }
 
     ``` 
-    
+>**Note:** The firebase hosting has a default url (bvcc-swe.web.app) that was created when the project was created. It is multiple students working on this project. Therefore each student needs a unique hosting url. When we add this specific line, we are telling firebase to host our client at this specific url instead of the default one.  
 
 
 
@@ -61,7 +61,7 @@ Before you deploy your application to Firebase, you must create a site using the
 In order to deploy your client to Firebase, we must create a production build. 
 
 1. Open a terminal and change the working directory to `bvcc/sessions/9/assignment/bvcc-to-do-client`
-1. Install Dependencies 
+1. Install the project dependencies 
     ```
     $ npm install
     ```
