@@ -1,4 +1,6 @@
-# Getting Started
+# Phase 2: Api Design
+>_For this phase you are tasked with completing the API that will communicate with our cloud database on firebase. We have already started the API for you and need your help with completing it. The API should be able to store the todo items in our database upon completion. After completion or to check during development please utilize the testing methods we provided_
+
 ## Prerequisites
 - Install [NodeJS](https://nodejs.org/en/download/)
 - Install [Visual Studio Code](https://code.visualstudio.com/download)
@@ -17,9 +19,9 @@ This assignment focuses on creating and using a Web API. Your task is to complet
 \
 To build a Web API that supports the URLs and HTTP methods described in the table above we will use [Express](https://expressjs.com). Express is a minimalist web framework that runs on [Node.js](https://nodejs.org). Express represents combinations of URLs and HTTP methods as [routes](https://expressjs.com/en/guide/routing.html). Each routes is activated when the Web API receives an HTTP request that matches a URL/HTTP method combination.
 
-To help you get started, a template project has already been created in `/sessions/8/assignment/bvcc-to-do-api`. The template project includes route support for getting all to-do list items (URL: /api/todos, Method: GET), and updating a to-do list item (URL: /api/todos, Method: PUT). The implemented routes and the Express documentation on [routing](https://expressjs.com/en/guide/routing.html) should provide hints that will assist you with creating the remaining routes.
+To help you get started, a template project has already been created in `/case-study/api-design-2/assignment/bvcc-to-do-api`. The template project includes route support for getting all to-do list items (URL: /api/todos, Method: GET), and updating a to-do list item (URL: /api/todos, Method: PUT). The implemented routes and the Express documentation on [routing](https://expressjs.com/en/guide/routing.html) should provide hints that will assist you with creating the remaining routes.
 
-To add the support for the remaining routes, edit the code in the file, `/sessions/8/assignment/bvcc-to-do-api/src/routes/todo.js`. The following section, Route Details, provides more details on how to implement the remaining routes. For convenience, these details are repeated as comments in the todo.js file.
+To add the support for the remaining routes, edit the code in the file, `/case-study/api-design-2/assignment/bvcc-to-do-api/src/routes/todo.js`. The following section, Route Details, provides more details on how to implement the remaining routes. For convenience, these details are repeated as comments in the todo.js file.
 ### Route Details
 #### Get a To-Do List Item with the Specified ID
 - Create a route that supports the **GET** method for the URL, **/api/todos/{id}**.
@@ -43,7 +45,7 @@ To test the Web API you will run it locally, and use Postman to initiate various
 
 ### Running the API
 1. Open Visual Studio Code.
-1. Open the folder (File &#8594; Open Folder), `bvcc/sessions/8/assignment/bvcc-to-do-api`.
+1. Open the folder (File &#8594; Open Folder), `bvcc/case-study/api-design-2/assignment/bvcc-to-do-api`.
 1. Open a terminal (View &#8594; Terminal), and run `npm install` from the project root directory to install the project dependencies.
 1. From the main menu, select Run &#8594; Start Debugging.  
 **Note:** This command will host the API at http://localhost:3002.
