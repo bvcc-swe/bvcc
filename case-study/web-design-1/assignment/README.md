@@ -1,18 +1,22 @@
-# Getting Started Guide
+# Phase 1: Web Design
+_For this phase you are tasked with creating the front-end of your web application. This is what users will see and interact with. Althought this is just the visual it is important that it looks cohesive with what we already provided. We will be using the interface to pull and create data later._ 
 
-### Install Git
+## Setting up your project 
+>_Please do the following to make sure that your project is set up correctly._
+
+### **Install Git**
 Install the latest version of [Git](https://git-scm.com/) from https://git-scm.com/downloads.
 > **Note:** The installation includes the Git command line interface, which enables the execution of source control tasks such as cloning repositories, creating branches, and committing changes.
 
-### Install Node.js
+### **Install Node.js**
 Install the latest version of [Node.js](https://nodejs.org/) from https://nodejs.org/en/download/. 
 > **Note:** The installation includes the Node.js runtime (node.exe) and the Node Package Manager (npm.exe). 
 
-### Install Yarn (Optional)
+### **Install Yarn (Optional)**
 Install the latest version of [Yarn](https://classic.yarnpkg.com/) from https://classic.yarnpkg.com/en/docs/install/#windows-stable.
 >**Note:** While Node Package Manager (NPM) is the default dependency management tool for Node.js, there are popular alternatives such as Yarn that provide a much simpler experience.
 
-### Install TypeScript
+### **Install TypeScript**
 Install the latest version of TypeScript by executing one of the following the commands: 
 
 Install TypeScript via NPM
@@ -50,7 +54,7 @@ Install the latest version of [Visual Studio Code](https://code.visualstudio.com
 For this exercise, two versions of the To-Do list React application were created. One version was written using React and JavaScript (bvcc-to-do-js), while the other was written using React and TypeScript (bvcc-to-do-ts). For those who are new to web development, we recommend that you attempt the assignment using the project that uses React and JavaScript. For those with more web development experience, we recommend that you attempt the assignment using the project that uses React and TypeScript.
 
 ### Open Project in Visual Studio Code
-1. Open the folder `<RepositoryRoot>\sessions\7\bvcc-to-do-xx` in Visual Studio Code.
+1. Open the folder `<RepositoryRoot>\case-study\web-design-1\assignment\bvcc-to-do-xx` in Visual Studio Code.
 >**Note:** The root repository is the same as the location where the repository was initially cloned.
 
 ### Install Dependencies
@@ -86,13 +90,17 @@ yarn start
 
 ## Assignment
 For this assignment you must complete at least one of the features below.
-### Feature: Enable Users to Create a To-Do List Item
+
+### **Feature: Enable Users to Create a To-Do List Item**
+
 For this feature you will add a mechanism that allows users to create a to-do list item by entering text into an input field and clicking a button to complete the operation. The feature should be developed according to the mockups below:
+
 ![Create To-Do List Item Image 1](./images/create_to-do_list_item_1.png)
 ![Create To-Do List Item Image 2](./images/create_to-do_list_item_2.png)
 ![Create To-Do List Item Image 3](./images/create_to-do_list_item_3.png)
 
-### Feature: Enable Users to Create a Request for an Existing To-Do List Item
+### **Feature: Enable Users to Create a Request for an Existing To-Do List Item**
+
 For this feature you will create a mechanism that allows users to create a help request for an existing to-do list item. To initiate this request, users will complete a form that is accessed via the "request help" button. Once the form has been completed the request information will be added to the to-do list item, and represented on the Get Organized and Get Paid tabs. The feature should lbe developed according to the mockups below:
 ![Create To-Do List Item Request 1](./images/create_to-do_list_item_request_1.png)
 ![Create To-Do List Item Request 2](./images/create_to-do_list_item_request_2.png)
