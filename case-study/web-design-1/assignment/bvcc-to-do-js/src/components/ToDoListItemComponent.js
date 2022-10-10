@@ -39,9 +39,7 @@ export const ToDoListItemComponent = ({ item, updateItem }) => {
     e.preventDefault();
     const items = { ...item, request: update }
     updateItem(items)
-    console.log(update)
     setModalIsOpen(false)
-    console.log(item)
   }
 
   const handleChange = (e) => {
