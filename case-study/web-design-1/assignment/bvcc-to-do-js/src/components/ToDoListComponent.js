@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { ApiClient } from '../clients/ApiClient';
 import { ToDoListItemComponent } from './ToDoListItemComponent';
+import CreateToDoListItemComponent from './CreateTodoListItemComponent';
 
 /**
  * Creates a component that represents a to-do list.
@@ -38,21 +39,32 @@ export const ToDoListComponent = () => {
 
     const toDoListItems = items.map(x => <ToDoListItemComponent
         item={x}
-        updateItem={updateItem} />);
+        updateItem={updateItem}
+        key={x.id}
+    />);
 
     return (
         <div>
             <ul className="list">
                 {toDoListItems}
                 {/* Replace the code below with your component, CreateToDoListItemComponent */}
-                <ToDoListItemComponent
+                {/* <ToDoListItemComponent
                     item={{
                         id: -1,
-                        title: "<!--Replace this code with your component, CreateToDoListItemComponent.-->",
+                        // title: "<!--Replace this code with your component, CreateToDoListItemComponent.-->",
+                        title: "",
                         isComplete: false,
                         request: null
                     }}
-                    updateItem={updateItem} />
+                    updateItem={updateItem} /> */}
+                <CreateToDoListItemComponent
+                    item={{
+                        title: "",
+                        isComplete: false,
+                        request: null
+                    }}
+                    createItem={createItem}
+                />
             </ul>
         </div>
     )

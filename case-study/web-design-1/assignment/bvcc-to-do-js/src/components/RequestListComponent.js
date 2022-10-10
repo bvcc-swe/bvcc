@@ -13,9 +13,10 @@ export const RequestListComponent = () => {
             const client = new ApiClient();
             const results = await client.getAll();
             setItems(results.filter(x => x.request));
+            console.log(results)
         })();
     }, []);
-    const requestListItems = items.filter(x => x.request).map(x => <RequestListItemComponent item={x} />);
+    const requestListItems = items.filter(x => x.request).map(x => <RequestListItemComponent item={x} key={x.id} />);
     return (
         <ul>
             {requestListItems}

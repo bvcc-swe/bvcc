@@ -12,13 +12,14 @@ nav {
   background-color: rgb(0, 0, 0);
 }
 
-nav a, nav a:visited{
+nav a,
+nav a:visited {
   text-decoration: none;
   color: rgb(255, 255, 255);
 }
 
-nav > button,
-nav > button:focus {
+nav>button,
+nav>button:focus {
   padding: 1em;
   background: none;
   border: none;
@@ -26,24 +27,24 @@ nav > button:focus {
   outline: none;
 }
 
-nav > button:hover {
+nav>button:hover {
   background-color: #444444;
   cursor: pointer;
 }
 
-nav > button.selected {
+nav>button.selected {
   background-color: #777777;
   font-weight: bold;
 }
 
-.nav-list{
+.nav-list {
   display: flex;
   flex-flow: row;
   list-style: none;
   padding: 0;
 }
 
-.nav-list > li{
+.nav-list>li {
   margin-right: 1em;
 }
 
@@ -68,31 +69,31 @@ ul.list {
   flex-flow: row nowrap;
 }
 
-.list-item > .status {
+.list-item>.status {
   flex: 0 0 5%;
   display: flex;
   align-items: center;
 }
 
-.list-item > .content {
+.list-item>.content {
   display: flex;
   flex-flow: column nowrap;
 }
 
-.list-item > .content {
+.list-item>.content {
   flex: 1 1 auto;
 }
 
-.list-item > .content > .title {
+.list-item>.content>.title {
   font-weight: bold;
   font-size: 1em;
 }
 
-.list-item > .content > .subtitle {
+.list-item>.content>.subtitle {
   font-size: 0.85em;
 }
 
-.list-item > .controls {
+.list-item>.controls {
   display: flex;
   align-items: center;
   margin-left: 1em;
@@ -128,24 +129,24 @@ ul.list {
   display: flex;
 }
 
-ul.property-list { 
+ul.property-list {
   list-style: none;
   padding: 0;
 }
 
-.property-list > li {
+.property-list>li {
   margin-right: 1em;
 }
 
-.property-list > li > span:nth-child(1)::after {
+.property-list>li>span:nth-child(1)::after {
   content: ": ";
 }
 
-.property-list > li > span:nth-child(1) {
+.property-list>li>span:nth-child(1) {
   font-weight: bold;
 }
 
-.property-list > li > span:nth-child(2) {
+.property-list>li>span:nth-child(2) {
   font-weight: bold;
   color: blue;
 }
@@ -160,4 +161,31 @@ ul.property-list {
 
 .btn.link:hover {
   cursor: pointer;
+}
+
+.todo_form {
+  width: 100%;
+  display: flex;
+}
+
+#newTodo {
+  border: none;
+  outline: none;
+  background-color: #CECECE;
+  font-family: inherit;
+  font-size: inherit;
+  width: 100%;
+  padding: 5px 75px;
+}
+
+@media (max-width:770px) {
+  #newTodo {
+    padding: 5px 35px;
+  }
+}
+
+@media (max-width:450px) {
+  #newTodo {
+    padding: 5px 20px;
+  }
 }

@@ -1,0 +1,101 @@
+.modal_root {
+  color: rgba(0, 0, 0, 0.85);
+  font-size: 14px;
+  line-height: 1.5715;
+  background-color: #fff;
+}
+
+.modal_root__overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1003;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.45);
+}
+
+.modal_root__wrap {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  outline: 0;
+  z-index: 1004;
+}
+
+.modal_root__wrap__modal {
+  color: rgba(0, 0, 0, 0.85);
+  position: relative;
+  font-size: 14px;
+  line-height: 1.5715;
+  top: 80px;
+  width: 30%;
+  height: 80%;
+  margin: 0 auto;
+  background-color: #fff;
+}
+
+.modal_content {
+  padding: 0px 20px;
+  margin-top: 20px;
+}
+
+.modal_header {
+  background-color: #000;
+  color: #fff;
+  padding: 30px;
+  font-size: 1.8em;
+  height: 100px;
+}
+
+.modal_form_label {
+  font-size: 1.3em;
+  font-weight: 600;
+}
+
+.modal_form_control {
+  border: 1px solid #000;
+  height: 50px;
+}
+
+.modal_btns button {
+  margin-top: 20px;
+  padding: 15px 20px;
+  font-size: 1.5em;
+  font-weight: 600;
+}
+
+.modal_complete {
+  background-color: #8FBC8F;
+  margin-right: 20px;
+}
+
+.modal_cancel {
+  background-color: #FF6347;
+}
+
+@media (max-width: 780px) {
+  .modal_root__wrap__modal {
+    width: 50%;
+    height: 82%;
+    margin: 8px auto;
+  }
+
+  .modal_btns button {
+    margin-top: 10px;
+    padding: 15px;
+    font-size: 1.3em;
+  }
+}
+
+@media (max-width: 450px) {
+  .modal_root__wrap__modal {
+    width: 100%;
+  }
+}
